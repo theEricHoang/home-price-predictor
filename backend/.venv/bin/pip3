@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/erichoang/Desktop/projectz/Home Price Predictor/.venv/bin/python3" "$0" "$@"
+'''exec' "/Users/erichoang/Desktop/projectz/Home Price Predictor/home-price-predictor/backend/.venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/erichoang/Desktop/projectz/Home Price Predictor/.venv"
+set -gx VIRTUAL_ENV "/Users/erichoang/Desktop/projectz/Home Price Predictor/home-price-predictor/backend/.venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
