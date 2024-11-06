@@ -1,23 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [inputData, setInputData] = useState({});
+  const [prediction, setPrediction] = useState(null);
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/api')
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the data!', error);
-        setMessage('ballsack');
-      });
-  }, []);
+  const handleChange = (e) => {
+    setInputData({
+      ...inputData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async() => {
+    try {
+      const response = await axios.post(
+        `%{process.env.REACT_APP_BACKEND_URL}/predict`,
+        inputData
+      );
+      setPrediction(response.data.prediction);
+    } catch (error) {
+      console.error("Error fetching prediction:", error);
+    }
+  };
 
   return (
-    <div className="App">
-      <h1>{message}</h1>
+    <div>
+      <h1>Prediction App</h1>
+      <input type="text" name="feature" onChange={handleChange} />
+      <button onClick={handleSubmit}>Predict</button>
+      {prediction && <p>Prediction: {prediction}</p>}
     </div>
   );
 }
