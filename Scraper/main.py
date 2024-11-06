@@ -35,15 +35,20 @@ while pg <= 20:
         data = response.json()
 
         for house in data['cat1']['searchResults']['listResults']:
-            if (('unformattedPrice' and 'addressZipcode' and 'beds' and 'baths' and 'area') in house):
-                flatHouse = {
-                    'price': house['unformattedPrice'],
-                    'zipCode': house['addressZipcode'],
-                    'beds': house['beds'],
-                    'baths': house['baths'],
-                    'sqft': house['area']
-                }
-                flatData.append(flatHouse)
+            if all(key in house for key in ['unformattedPrice', 'addressZipcode', 'beds', 'baths', 'area', 'latLong']):
+                # Additional check for 'latitude' and 'longitude' inside 'latLong'
+                latLong = house['latLong']
+                if 'latitude' in latLong and 'longitude' in latLong:
+                    flatHouse = {
+                        'price': house['unformattedPrice'],
+                        'zipCode': house['addressZipcode'],
+                        'beds': house['beds'],
+                        'baths': house['baths'],
+                        'sqft': house['area'],
+                        'latitude': latLong['latitude'],
+                        'longitude': latLong['longitude']
+                    }
+                    flatData.append(flatHouse)
     else:
         print(f"Request failed with status code {response.status_code}")
 
