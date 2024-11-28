@@ -14,4 +14,4 @@ def predict():
         return jsonify({'error': 'Invalid data or unable to fetch coordinates'}), 400
 
     prediction = make_prediction(features, model)
-    return jsonify({'predictedPrice': prediction[0]})
+    return jsonify({'predictedPrice': int(prediction[0]*100)/100})

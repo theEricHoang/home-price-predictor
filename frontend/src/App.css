@@ -1,3 +1,7 @@
+  * {
+    font-family: Helvetica;
+  }
+  
   /* Navigation bar styling */
   .navbar {
     background-color: #f8f9fa;
@@ -55,7 +59,8 @@
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
     text-align: left;
   }
 
@@ -77,6 +82,10 @@
     border-radius: 4px;
   }
 
+  .form-panel input:hover {
+    border: 1px solid #007bff
+  }
+
   .form-panel button {
     width: 100%;
     padding: 10px;
@@ -90,6 +99,10 @@
 
   .form-panel button:hover {
     background-color: #0056b3;
+  }
+
+  .estimation {
+    color: #0056b3
   }
 
   .disclaimer {
