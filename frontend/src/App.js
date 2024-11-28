@@ -82,6 +82,31 @@ function App() {
           </p>
         </div>
       </div>
+
+      <div id="about" className="about-section">
+        <h2>About This Project</h2>
+        <p>
+          This project was built using data collected from 8,000 house listings on Zillow to train a machine learning model to make predictions for house prices.
+        </p>
+
+        <div className="bios">
+          <div className="bio">
+            <img src="erichoangbio.jpeg" alt="Eric Hoang" />
+            <h3>Eric Hoang</h3>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit.</p>
+            <a href="https://www.linkedin.com/in/erichoang2/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/theEricHoang" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+          
+          <div className="bio">
+            <img src="ryanphambio.jpeg" alt="Ryan Pham" />
+            <h3>Ryan Pham</h3>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit.</p>
+            <a href="https://www.linkedin.com/in/the-ryan-pham/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/ryangpham" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
