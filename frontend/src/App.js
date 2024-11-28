@@ -35,11 +35,12 @@ function App() {
       <nav className="navbar">
         <div className="navbar-title">Atlanta Home Price Estimator</div>
           <div className="navbar-links">
-            <a href="home">Home</a>
-            <a href="about">About</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
           </div>
       </nav>
-      <div className="content">
+
+      <div id="home" className="content">
         <div className="title-panel">
           <h1>Atlanta Home Price Estimator</h1>
           <p className="description">
@@ -101,7 +102,9 @@ function App() {
           <div className="bio">
             <img src="ryanphambio.jpeg" alt="Ryan Pham" />
             <h3>Ryan Pham</h3>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit.</p>
+            <p>
+              Implemented a seamless frontend UI, including separate sections that featured an interactive form panel to fetch predicted house prices and information about the contributors. Designed a modern, user-friendly experience with smooth navigation and a responsive design.
+            </p>
             <a href="https://www.linkedin.com/in/the-ryan-pham/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/ryangpham" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
