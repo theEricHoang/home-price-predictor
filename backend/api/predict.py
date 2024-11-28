@@ -1,13 +1,17 @@
 from flask import Blueprint, request, jsonify
 from model.model_utils import load_model, make_prediction
-import numpy as np
+from model.preprocessing import preprocess_data
 
-predict_blueprint = Blueprint('predict', __name__)
+predict_blueprint = Blueprint('predict-house-price', __name__)
 model = load_model()
 
-@predict_blueprint.route('/predict', methods=['POST'])
+@predict_blueprint.route('/api/predict-house-price', methods=['POST'])
 def predict():
     data = request.get_json()
-    features = np.array([data['zipCode'], data['beds'], data['baths'], data['sqft'], data['latitude'], data['longitude']]).reshape(1, -1)
+    features = preprocess_data(data)
+
+    if features.empty:
+        return jsonify({'error': 'Invalid data or unable to fetch coordinates'}), 400
+
     prediction = make_prediction(features, model)
     return jsonify({'predictedPrice': prediction[0]})
