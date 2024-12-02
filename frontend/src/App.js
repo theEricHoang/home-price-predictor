@@ -94,7 +94,7 @@ function App() {
           <div className="bio">
             <img src="erichoangbio.jpeg" alt="Eric Hoang" />
             <h3>Eric Hoang</h3>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit.</p>
+            <p>Built a robust web scraper to collect data on over 8,000 Atlanta homes. Trained a Gradient Boosting Regressor model with sk-learn to predict home prices. Designed a RESTful API with Flask to handle prediction requests.</p>
             <a href="https://www.linkedin.com/in/erichoang2/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/theEricHoang" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
